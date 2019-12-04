@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.algonquin.rach0022.rach0022" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>Rach0022</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="www\img\android-icons\app-ldpi.png" />
+    <icon density="mdpi" src="www\img\android-icons\app-mdpi.png" />
+    <icon density="hdpi" src="www\img\android-icons\app-hdpi.png" />
+    <icon density="xhdpi" src="www\img\android-icons\app-xhdpi.png" />
+    <icon density="xxhdpi" src="www\img\android-icons\app-xxhdpi.png" />
+    <icon density="xxxhdpi" src="www\img\android-icons\app-xxxhdpi.png" />
+    <splash density="land-ldpi" src="www\img\android-splashs\ldpi_splash_landscape.png" />
+    <splash density="land-mdpi" src="www\img\android-splashs\mdpi_splash_landscape.png" />
+    <splash density="land-hdpi" src="www\img\android-splashs\hdpi_splash_landscape.png" />
+    <splash density="land-xhdpi" src="www\img\android-splashs\xhdpi_splash_landscape.png" />
+    <splash density="land-xxhdpi" src="www\img\android-splashs\xxhdpi_splash_landscape.png" />
+    <splash density="land-xxxhdpi" src="www\img\android-splashs\xxxhdpi_splash_landscape.png" />
+    <splash density="port-ldpi" src="www\img\android-splashs\ldpi_splash.png" />
+    <splash density="port-mdpi" src="www\img\android-splashs\mdpi_splash.png" />
+    <splash density="port-hdpi" src="www\img\android-splashs\hdpi_splash.png" />
+    <splash density="port-xhdpi" src="www\img\android-splashs\xhdpi_splash.png" />
+    <splash density="port-xxhdpi" src="www\img\android-splashs\xxhdpi_splash.png" />
+    <splash density="port-xxxhdpi" src="www\img\android-splashs\xxxhdpi_splash.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="5000" />
+</widget>

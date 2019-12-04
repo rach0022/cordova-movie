@@ -1,0 +1,445 @@
+@import 'variables';
+@import 'mixins';
+
+html {
+    background-color: $bg-accent-color;
+    font-size: 16px;
+}
+
+//header of page in mobile view:
+header{
+    background-color: $bg-color;
+    color: $card-color;
+    z-index: 250;
+    opacity: 1;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    font-weight: 900;
+
+
+    //meida query for tablet
+    @media #{$tablet_query}{
+        font-size: 1.2rem;
+    }
+    //media query for desktop view:
+    @media #{$desktop_query}{
+        background-color: $text-color;
+        color: $bg-color;
+        font-size: 1.4rem;
+    }
+}
+
+// taken from simple spa demo, page and active class idea
+//mobile first display, then make media queries for larger screens
+.page {
+    box-sizing: border-box;
+    min-height: 75vh;
+    width: 100vw;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    @include flex(column, center);
+    opacity: 0;
+    z-index: 1;
+    color: $text-color;
+    &.active {
+        opacity: 1;
+        z-index: 100;
+    }
+
+    //make it so that the search bar starts up higher in mobile
+    &#searchpage{
+        justify-content: flex-start;
+    }
+    background-color: $bg-accent-color;
+    form{
+        @include flex(column, center);
+        color: $card-color;
+        background-color: $bg-color;
+        padding: 10vw;
+        border-radius: 10px;
+        margin: 20px;
+        font-size: 18px;
+        button{
+            margin: 20px;
+            font-size: 1.2em;
+            color: $bg-color;
+            background-color: $card-color;
+            border-radius: 4px;
+            border: 2px solid transparent;
+            &:hover{
+                border: 2px solid $card-accent-color;
+            }
+        }
+        input[type=text]{
+            // border: 2px solid $card-color;
+            background-color: $text-color;
+            width: 150px;
+            height: 50px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.2em;
+        }
+        @media #{$tablet_query}{
+            width: 80vw;
+            height: 20vh;
+            align-items: center;
+            input[type=text]{
+                width: 100%;
+            }
+            button{
+                width: 100%;
+                position: relative;
+                left: -10px;
+            }
+        }
+        @media #{$desktop_query}{
+            width: 80vw;
+            height: 10vh;
+            align-items: center;
+            background-color: $text-color;
+            border-radius: 0;
+            input[type=text]{
+                width: 100%;
+                background-color: $bg-color;
+                color: $card-color;
+            }
+            button{
+                width: 100%;
+                position: relative;
+                left: -10px;
+            }
+        }
+    }
+    
+}
+
+#searchresults{
+    h3{
+        color: $card-color;
+        font-size: 1.4em;
+
+        //make it so atlest the first letter of search query is caps
+        text-transform: capitalize;
+        width: 100%;
+        text-align: center;
+        border-bottom: 3px solid $card-color;
+        padding-bottom: 10px;
+        &:last-child{
+            height: 20px;
+        }
+    }
+    //styling on the search results page, mobile view
+    .results{
+        width: 300px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    //styling on the actor profiles in the search results
+    .actor{
+        float: left;
+        width: 130px;
+        margin: 10px;
+        background-color: $bg-color;
+        border-radius: 15px;
+        text-align: center;
+        font-weight: bold;
+        color: $card-color;
+        transition: all 200ms ease-in;
+
+        //use a box shado to make it pop out a bit more
+        box-shadow: 2px 2px 4px $card-color,-2px -2px 4px $card-accent-color;
+        img{
+            width: 130px;
+            height: 130px;
+            border-radius: 15px;
+        }
+
+        //proerpties for when user hovers over div
+        &:hover{
+            transform: scale(1.4);
+            z-index: 300;
+            box-shadow: 2px 2px 4px $bg-color,-2px -2px 4px $bg-accent-color;
+        }
+        @media #{$desktop_query}{
+            display: flex;
+            width: 20vw;
+            height: 180px;
+            justify-content: space-between;
+            text-shadow: 1px 1px 2px $text-color;
+            img{
+                width: 120px;
+                height: 180px;
+                border: 1px solid $text-color;
+            }
+        }
+    }
+    @media #{$tablet_query}{
+        font-size: 1.2rem;
+
+        .results{
+            width: 100%;
+
+        }
+    }
+    @media #{$desktop_query}{
+        font-size: 1.4rem;
+        
+        .results{
+            width: 70%;
+            justify-content: space-between;
+        }
+    }
+}
+
+#actordetails{
+    h3{
+        width: 100%;
+        border: 6px solid $card-color;
+        //make sure border does not extend past view to prevent horizontal scroll issue
+        border-left: 0;
+        border-right: 0;
+        color: $card-color;
+        text-align: center;
+        font-weight: 300;
+        font-size: 40px;
+        margin-bottom: 0;
+        margin-top: 0;
+        
+    }
+    img{
+        padding-top: 20px;
+    }
+    .moviesby{
+        @include flex(column, center);
+        transform: scale(1);
+    }
+    //styling on the movie div in the actors page
+    .movie{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        width: 200px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        text-align: center;
+        border-right: 0;
+        border-left: 0;
+        display: flex;
+        font-weight: 600;
+        @include flex(column, center);
+        color: $card-color;
+        p{
+            text-transform: uppercase;
+            font-size: 1.3em;
+            margin-bottom: 0;
+            
+        }
+        width: inherit;
+
+        img{
+            //pushing the image to the bottom of the div
+            //will find out later why there is the tiniest amout of space at the
+            //bottoom that is open
+            margin-bottom: 0;
+            position: relative;
+            top: 6px;
+
+            //set a default width and height for the image, change once
+            //this design is responsive
+            width: 200;
+            height: 300;
+            float: left;
+            
+        }
+        i{
+            color: $card-color;
+            width: 200px;
+            position: relative;
+            top: -10px;
+            background-color: $bg-color;
+
+            font-size: 50px;
+        }
+    }
+    @media #{$tablet_query}{
+        .moviesby{
+            flex-direction: row;
+        }
+        .movie{
+            width: 30%;
+            img{
+                transform: scale(0.8);
+            }
+            i{
+                transform: scale(0.8);
+                top: -40px;
+            }
+            p{
+                height: 75px;
+            }
+        }
+    }
+    @media #{$desktop_query}{
+        .moviesby{
+            height: 475px;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .movie{
+            padding-left: 30px;
+            padding-right: 30px;
+            width: 250px;
+            img{
+                transform: scale(1.2);
+                vertical-align: text-bottom;
+            }
+            i{
+                transform: scale(1.2);
+                top: -10px;
+            }
+            p{
+                height: 75px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+#backbutton{
+    z-index: 200;
+    opacity: 0;
+
+    //creating the floating action button:
+    //set with and height
+    width: 70px;
+    height: 70px;
+
+    //make the font size bigger:
+    font-size: 25px;
+
+    //make button bright red for now
+    background-color: $card-color;
+
+    //make button a circle and give it a box shadow to look like its floating
+    border-radius: 50%;
+    box-shadow: 0 6px 10px 0 $text-color;
+
+    position: fixed;
+    top: 85vh;
+    left: 78vw;
+    @media #{$tablet_query}{
+        transform: scale(0.8);
+        left: 90vw;
+    }
+    @media #{$desktop_query}{
+        top: 50px;
+        transform: scale(0.8);
+        left: 90vw;
+        z-index: 300;
+    }
+
+}
+#movieresults{
+    //styling for the movie details entire screen
+    #moviedetails{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: 4px solid $card-color;
+        font-weight: 600;
+        text-shadow: 2px 2px $bg-color,-2px -2px $bg-color;
+        font-size: 1.17em;
+        img{
+            text-shadow: 2px 2px $bg-color,-2px -2px $bg-color;
+        }
+    }
+    //styling for the cast on the movie detail screen
+    #cast{
+        text-align: center;
+        @include flex(column, center);
+        justify-content: space-around;
+        text-shadow: 2px 2px $bg-color,-2px -2px $bg-color;
+        font-size: 1.05em;
+        .actor-credit{
+            width: 300px;
+            height: 100px;
+            padding-bottom: 20px;
+        }
+        img {
+            border-radius: 50%;
+            border: 3px solid $bg-color;
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        #tv-creators{
+            display: flex;
+            flex-direction: row;
+            .creator{
+                img{
+                    float: none;
+                }
+            }
+        }
+    }
+    @media #{$tablet_query} {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-size: 1.2rem;
+        border: 0;
+        width: 100%;
+        #moviedetails{
+            width: 50vw;
+            border-bottom: 0;
+            position: fixed;
+            top: 150px;
+            left: 0;
+            font-size: 0.8em;
+        }
+        #cast{
+            width:  fit-content;
+            position: relative;
+            left: 20vw;
+        }
+    }
+    @media #{$desktop_query} {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-size: 1.2rem;
+        border: 0;
+        width: 100%;
+        h3{
+            font-size: 1.2rem;
+        }
+        #moviedetails{
+            width: 50vw;
+            border-bottom: 0;
+            position: fixed;
+            top: 150px;
+            left: 0;
+            font-size: 0.8em;
+        }
+        #cast{
+            width:  fit-content;
+            position: relative;
+            left: 20vw;
+            font-size: 0.9rem;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.algonquin.rach0022.rach0022" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Rach0022</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+
+        <!-- icons for android  -->
+        <icon src="www\img\android-icons\app-ldpi.png" density="ldpi" />
+        <icon src="www\img\android-icons\app-mdpi.png" density="mdpi" />
+        <icon src="www\img\android-icons\app-hdpi.png" density="hdpi" />
+        <icon src="www\img\android-icons\app-xhdpi.png" density="xhdpi" />
+        <icon src="www\img\android-icons\app-xxhdpi.png" density="xxhdpi" />
+        <icon src="www\img\android-icons\app-xxxhdpi.png" density="xxxhdpi" />
+        <!-- splashscreens for android staying on for 5 seconds  -->
+        <splash src="www\img\android-splashs\ldpi_splash_landscape.png" density="land-ldpi"/>
+        <splash src="www\img\android-splashs\mdpi_splash_landscape.png" density="land-mdpi"/>
+        <splash src="www\img\android-splashs\hdpi_splash_landscape.png" density="land-hdpi"/>
+        <splash src="www\img\android-splashs\xhdpi_splash_landscape.png" density="land-xhdpi"/>
+        <splash src="www\img\android-splashs\xxhdpi_splash_landscape.png" density="land-xxhdpi"/>
+        <splash src="www\img\android-splashs\xxxhdpi_splash_landscape.png" density="land-xxxhdpi"/>
+        <splash src="www\img\android-splashs\ldpi_splash.png" density="port-ldpi"/>
+        <splash src="www\img\android-splashs\mdpi_splash.png" density="port-mdpi"/>
+        <splash src="www\img\android-splashs\hdpi_splash.png" density="port-hdpi"/>
+        <splash src="www\img\android-splashs\xhdpi_splash.png" density="port-xhdpi"/>
+        <splash src="www\img\android-splashs\xxhdpi_splash.png" density="port-xxhdpi"/>
+        <splash src="www\img\android-splashs\xxxhdpi_splash.png" density="port-xxxhdpi"/>
+        <preference name="AutoHideSplashScreen" value="true" />
+        <preference name="SplashScreenDelay" value="5000" />
+
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
