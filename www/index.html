@@ -29,17 +29,16 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
         <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self' *.themoviedb.org *.fontawesome.com data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
-        style-src *.fontawesome.com 'self' 'unsafe-inline'; 
+        content="default-src 'self' https://api.themoviedb.org https://use.fontawesome.com *.themoviedb.org *.fontawesome.com data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+        style-src https://use.fontawesome.com *.fontawesome.com 'self' 'unsafe-inline'; 
         media-src *; 
         script-src 'unsafe-inline' 'self';
-        img-src *.themoviedb.org *.tmdb.org 'self' data: content:;
-        connect-src *.themoviedb.org 'self';">
+        img-src https://image.tmdb.org *.themoviedb.org *.tmdb.org 'self' data: content:;
+        connect-src https://api.themoviedb.org *.themoviedb.org 'self';">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" href="css/style.css">
         <title>Movie Search App</title>
     </head>

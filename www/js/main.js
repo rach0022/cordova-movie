@@ -4,7 +4,6 @@ const app = {
     movieID: null,
     baseURL: null,
     imageBaseURL: "https://image.tmdb.org/t/p/",
-    isCordova: false,
     pages: [],
     active: null,
 
@@ -132,13 +131,12 @@ const app = {
         //now make it so that the window view will go back 
         //to the top of the page so the user doesnt have to scroll each time
         //use the window.scrollTo method with options to define it as smooth
-        if(app.isCordova == false){
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+        
         
 
         //check if the newpage is the search page
@@ -537,13 +535,6 @@ const app = {
 //to actually initialize our code we do the following:
 
 //check if cordova app or broswer based
-let ready = "";
-if("cordova" in window){
-    ready = "deviceready";
-    //switch to see if cordova is running to use for error checking methods 
-    //not in cordova
-    app.isCordova = true;
-} else {
-    ready = "DOMContentLoaded";
-}
+let ready = "cordova" in window ? "deviceready" : "DOMContentLoaded";
+// app.isCordova = ready == "cordova" ? true : false;
 document.addEventListener(ready, app.init);
