@@ -131,13 +131,7 @@ const app = {
         //now make it so that the window view will go back 
         //to the top of the page so the user doesnt have to scroll each time
         //use the window.scrollTo method with options to define it as smooth
-        if(window.scrollTo){
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
+        window.scrollTo(0,0);
         
         
 
@@ -538,4 +532,5 @@ const app = {
 
 //check if cordova app or broswer based
 let ready = "cordova" in window ? "deviceready" : "DOMContentLoaded";
+// app.isCordova = ready == "cordova" ? true : false;
 document.addEventListener(ready, app.init);
