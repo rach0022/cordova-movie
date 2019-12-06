@@ -10,14 +10,17 @@
     </feature>
     <name>Rach0022</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        This is an app where you can search actors from The Movie Database API
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="rach0022@algonquinlive.com" href="rach0022.github.io">
+        Algonquin M.A.D.D
     </author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
+    <allow-intent href="*.themoviedb.org" />
+    <allow-intent href="*.fontawesome.com" />
+    <allow-intent href="*.tmdb.org" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
