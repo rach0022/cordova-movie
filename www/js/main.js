@@ -51,9 +51,10 @@ const app = {
         //while the parent nodes has a child node
         //keep looking until there are no children
         if(parent.firstChild){
-            while(parent.firstChild){
-                parent.removeChild(parent.firstChild);
-            }
+            // while(parent.firstChild){
+            //     parent.removeChild(parent.firstChild);
+            // }
+            parent.innerHTML = "";
         }
     },
     //build a title in html for the page, 
