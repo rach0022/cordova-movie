@@ -435,6 +435,9 @@ const app = {
         ev.preventDefault();
         ev.stopPropagation();
 
+        //get the search query from the user
+        app.searchQuery = document.getElementById('actor').value;
+
         //first get a reference to the proper output div
         //and then remove all the children from the div
         //and then switch the reference of the current page
@@ -446,7 +449,7 @@ const app = {
         //switch the active page to the output div
         app.active = targetDiv;
 
-        app.searchQuery = document.getElementById('actor').value;
+        
         // console.log("You searched:",app.searchQuery);
 
         app.buildTitle("You Searched: " + app.searchQuery, targetDiv);
@@ -456,7 +459,7 @@ const app = {
         document.querySelector('form').reset();
 
         //if there is a search query
-        if(app.searchQuery){
+        if(app.searchQuery ){
 
             //how to get a /search/person
             let url = `https://api.themoviedb.org/3/search/person?api_key=${app.apiKey}&query=${app.searchQuery}`;
