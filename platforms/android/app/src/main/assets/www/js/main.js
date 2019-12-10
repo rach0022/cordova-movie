@@ -438,6 +438,11 @@ const app = {
         //get the search query from the user
         app.searchQuery = document.getElementById('actor').value;
 
+        if(app.searchQuery == ""){
+            alert("You did not enter a search query");
+            return null;
+        }
+
         //first get a reference to the proper output div
         //and then remove all the children from the div
         //and then switch the reference of the current page
